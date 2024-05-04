@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard - Digital Library Management</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .logo {
+        color: #45a049;
+        font-size: 24px;
+    }
+    .logout-btn {
+        background-color: #f44336;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .logout-btn:hover {
+        background-color: #d32f2f;
+    }
+    .about-link {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+    .about-link:hover {
+        color: #45a049;
+    }
+    .options {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+    .option {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    .option:hover {
+        transform: translateY(-5px);
+    }
+    .option i {
+        font-size: 36px;
+        color: #45a049;
+        margin-bottom: 10px;
+    }
+    .option h2 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .option p {
+        color: #666;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo"><i class="fas fa-book"></i> Digital Library</div>
+        <div>
+            <a href="/dashboard/aboutus" class="about-link">About</a>
+            <button class="logout-btn" onclick="location.href='dashboard/logout'">Logout</button>
+        </div>
+    </div>
+    <div class="options">
+        <div onclick="location.href='dashboard/search'", class="option">
+            <i class="fas fa-search"></i>
+            <h2>Search</h2>
+            <p>Find your desired content</p>
+        </div>
+        <div onclick="location.href='dashboard/ebook'", class="option">
+            <i class="fas fa-book"></i>
+            <h2>e-Book</h2>
+            <p>Download digital copy of the books</p>
+        </div>
+        <div onclick="location.href='dashboard/borrowed'", class="option">
+            <i class="fas fa-history"></i>
+            <h2>Borrowed</h2>
+            <p>View your borrowed books history</p>
+        </div>
+        <div onclick="location.href='dashboard/changepassword'", class="option">
+            <i class="fas fa-cog"></i>
+            <h2>Change Password</h2>
+            <p>Change your password</p>
+        </div>
+        <div onclick="location.href='dashboard/profile'" , class="option">
+            <i class="fas fa-user"></i>
+            <h2>Profile</h2>
+            <p>Manage your profile information</p>
+        </div>
+        <div onclick="location.href='dashboard/help'", class="option">
+            <i class="fas fa-question-circle"></i>
+            <h2>Help &amp; Support</h2>
+            <p>Get assistance and support</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

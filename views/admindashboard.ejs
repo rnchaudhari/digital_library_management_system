@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Admin Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        color: #45a049;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .metrics {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .metric {
+        flex: 1;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .metric i {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #45a049;
+    }
+    .metric p {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+    }
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .action {
+        flex: 1;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+    .action:hover {
+        background-color: #e0e0e0;
+    }
+    .action i {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #45a049;
+    }
+    .action p {
+        margin: 0;
+        font-size: 16px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">Admin Dashboard</div>
+    <div class="metrics">
+        <div class="metric">
+            <i class="fas fa-book"></i>
+            <p>Total Books: <%= locals.pageStats.totalBooks %></p>
+        </div>
+        <div class="metric">
+            <i class="fas fa-users"></i>
+            <p>Total Members: <%= locals.pageStats.totalUsers%></p>
+        </div>
+        <div class="metric">
+            <i class="fas fa-calendar-alt"></i>
+            <p>Total Borrowings: <%=locals.pageStats.totalBorrowedBooks%></p>
+        </div>
+        <div class="metric">
+            <i class="fas fa-chart-line"></i>
+            <p>Revenue: $1000</p>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="action" , onclick="location.href='/admin/addbook'">
+            <i class="fas fa-book"></i>
+            <p>Add New Book</p>
+        </div>
+        <div class="action" , onclick="location.href='/admin/adduser'">
+            <i class="fas fa-user-plus"></i>
+            <p>Add New Member</p>
+        </div>
+        <div class="action", onclick="location.href='admin/'">
+            <i class="fas fa-chart-bar"></i>
+            <p>Generate Reports</p>
+        </div>
+        <div class="action", onclick="location.href='/admin/'">
+            <i class="fas fa-cog"></i>
+            <p>Settings</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

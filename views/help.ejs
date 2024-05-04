@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help & Support - Digital Library Management</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+    .header {
+        color: #45a049;
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .contact-info {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .contact-info h2 {
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .contact-form {
+        text-align: center;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .contact-form button {
+        background-color: #45a049;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+        background-color: #357e3d;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">Help & Support</div>
+    <div class="contact-info">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="/dashboard/help" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>For any urgent queries or assistance, please contact us at:</p>
+        <p><i class="fas fa-envelope"></i> support@librarymanagement.com</p>
+        <p><i class="fas fa-phone"></i> +1234567890</p>
+    </div>
+</div>
+</body>
+</html>

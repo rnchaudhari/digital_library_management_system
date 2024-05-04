@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Library Management</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 100px;
+    }
+    .logo {
+        color: #45a049;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+    h1 {
+        color: #333;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+    p {
+        color: #666;
+        font-size: 18px;
+        margin-bottom: 40px;
+    }
+    .login-btn {
+        background-color: #45a049;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .login-btn:hover {
+        background-color: #357e3d;
+    }
+    .options {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    .options a {
+        text-decoration: none;
+        color: #45a049;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+    .options a:hover {
+        color: #357e3d;
+    }
+    .icon {
+        margin-right: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="logo"><i class="fas fa-book"></i> Digital Library</div>
+    <h1>Welcome to our Digital Library Management</h1>
+    <p>Access a vast collection of digital resources and enhance your learning experience!</p>
+    <button onclick="location.href='/login'", class="login-btn">Login</button>
+    <div class="options">
+        <a href="#"><i class="fas fa-search icon"></i>Explore</a>
+        <a href="#"><i class="fas fa-list-alt icon"></i>Categories</a>
+        <a href="#"><i class="fas fa-user-graduate icon"></i>Study Guides</a>
+    </div>
+</div>
+</body>
+</html>

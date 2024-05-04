@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borrowing History - Digital Library Management</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+    .header {
+        color: #45a049;
+        font-size: 32px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .history-list {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .history-item {
+        border-bottom: 1px solid #ddd;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .history-item:last-child {
+        border-bottom: none;
+    }
+    .book-info {
+        flex: 1;
+    }
+    .book-info h3 {
+        color: #333;
+        margin: 0;
+    }
+    .book-info p {
+        color: #666;
+        margin: 5px 0;
+    }
+    .date-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .return-button {
+        background-color: #45a049;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .return-button:hover {
+        background-color: #357e3d;
+    }
+    .search-form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .search-form input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .search-form button {
+        background-color: #45a049;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .search-form button:hover {
+        background-color: #357e3d;
+    }
+    .search-results {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">Borrowing History</div>
+    <form class="search-form" action="/dashboard/borrowed" method="post">
+        <input type="text" name="query" placeholder="Enter the isbn of the bok you want to return">
+        <button type="submit"><i class="fas fa-search"></i> Search</button>
+    </form>
+    <div class="history-list">
+    <% locals.allBorrowedBooks.forEach(borrowedBook => { %>
+        <div class = "history-item">
+            <div class="book-info">
+                <div>
+                    <h3><%= borrowedBook.title %></h3>
+                    <p>Author: <%= borrowedBook.author %></p>
+                    <p>ISBN: <%- borrowedBook.isbn %></p>
+                </div>
+            </div>
+        </div>
+     
+    <% }) %>
+    </div>
+</div>
+</body>
+</html>

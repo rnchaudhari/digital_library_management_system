@@ -1,0 +1,30 @@
+{
+  "name": "digital_library_management_system",
+  "version": "1.0.0",
+  "description": "this is a digital library management system ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js ",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaustubhKolhe99/digital_library_management_system.git"
+  },
+  "author": "Kaustubh Kolhe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaustubhKolhe99/digital_library_management_system/issues"
+  },
+  "homepage": "https://github.com/kaustubhKolhe99/digital_library_management_system#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^6.9.0",
+    "nodemon": "^3.0.3",
+    "uuid": "^9.0.1"
+  }
+}

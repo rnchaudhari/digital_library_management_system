@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search - Digital Library Management</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+    }
+    .container {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+        color: #45a049;
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .search-form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .search-form input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .search-form button {
+        background-color: #45a049;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .search-form button:hover {
+        background-color: #357e3d;
+    }
+    .search-results {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+    }
+    .book-item {
+        border-bottom: 1px solid #ddd;
+        padding: 10px 0;
+    }
+    .book-item:last-child {
+        border-bottom: none;
+    }
+    .book-title {
+        font-weight: bold;
+    }
+    .book-author {
+        color: #666;
+    }
+    .book-availability {
+        color: #45a049;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">Search Books</div>
+    <form class="search-form" action="/dashboard/search" method="post">
+        <input type="text" name="query" placeholder="enter the isbn of the book you want to borrow">
+        <button type="submit"><i class="fas fa-search"></i> Enter</button>
+    </form>
+    <div class="search-results">
+        
+    <% allBooks.forEach(book => { %>
+        <div class= "book-item">
+            <div class= "book-title" > Title: <%= book.title %></div>
+            <div class= "book-author" > Author:  <%= book.author %></div>
+            <div class="book-isbn"> ISBN <%= book.isbn %></div>
+            <div class= "book-availability" > <% if (book.currentHolder != null) { %>
+                not Available
+                <% } else { %>
+                    Available
+                <% } %>
+            </div>         
+        </div>
+    <% }) %> 
+</div>
+</body>
+</html>
